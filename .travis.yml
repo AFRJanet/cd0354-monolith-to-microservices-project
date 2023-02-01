@@ -1,0 +1,37 @@
+language: node_js
+node_js:
+  - 14
+
+services:
+  - docker
+
+# Pre-testing installs
+install:
+  - echo "nothing needs to be installed"
+
+# Scripts to be run such as tests
+before_script:
+  - echo "no tests"
+
+script:
+  - docker --version # print the version for logging
+  - docker-compose -f docker-compose-build.yaml --parallel
+  
+  - docker tag udagram-api-user ameliejanetschek/udagram-api-user
+  - docker tag udagram-api-feed ameliejanetschek/udagram-api-feed
+  - docker tag udagram-frontend ameliejanetschek/udagram-frontend
+  - docker tag udagram-reverseproxy ameliejanetschek/udagram-reverse-proxy
+
+# Bake environment variables into docker build  
+#  - docker build -t simple-node --build-arg PET={$PET} .
+
+# Tag before push image
+#  - docker tag simple-node ameliejanetschek/simplenodedemo:latest
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+#  - docker push ameliejanetschek/simplenodedemo:latest
+  - docker push ameliejanetschek/udagram-api-user
+  - docker push ameliejanetschek/udagram-api-feed
+  - docker push ameliejanetschek/udagram-frontend
+  - docker push ameliejanetschek/udagram-reverse-proxy

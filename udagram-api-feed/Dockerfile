@@ -15,7 +15,7 @@ RUN npm install
 COPY . .
 
 # Set the API’s port number
-EXPOSE 8100
+EXPOSE 8080
 
 # Define Docker’s behavior when the image is run
 CMD ["node", "server.js"]
