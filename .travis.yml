@@ -23,8 +23,6 @@ install:
 before_script:
   - echo "no tests"
 
-ENV AWS_PROFILE=$AWS_PROFILE
-
 script:
   - docker --version # print the version for logging
 #  - docker-compose -f docker-compose-build.yaml --parallel
