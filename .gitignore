@@ -42,3 +42,4 @@ venv/
 !.elasticbeanstalk/*.global.yml
 /.node_env_variables.bat
 /udagram-api/.node_env_variables.bat
+/docker-compose_dump.dump
