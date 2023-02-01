@@ -12,7 +12,7 @@ COPY package*.json ./
 RUN npm ci
 
 # Copy app from local environment into the Docker image
-COPY ./www .
+COPY . .
 
 # Set the API’s port number
 EXPOSE 8080
