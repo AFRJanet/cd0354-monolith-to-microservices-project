@@ -2,14 +2,14 @@
   "name": "udagram-api-feed",
   "version": "2.0.0",
   "description": "",
-  "main": "src/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node .",
+    "start": "node server.js",
     "tsc": "tsc",
     "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
     "prod": "tsc && node ./www/server.js",
-    "clean": "rm -rf www/ || true",
-    "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
+    "clean": "rimraf www/ || true",
+    "build": "npm run clean && tsc && xcopy \"./src/config\" \"./www/config\" && xcopy \".npmrc\" \"./www/.npmrc\" && xcopy package.json \"./www/package.json\" && cd www && 7z a -tzip Archive.zip \"./\" && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -45,6 +45,7 @@
     "eslint-config-google": "^0.14.0",
     "mocha": "^6.1.4",
     "ts-node-dev": "^1.0.0-pre.32",
-    "typescript": "^3.3.4000"
+    "typescript": "^3.3.4000",
+    "rimraf": "^3.0.2"
   }
 }

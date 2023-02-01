@@ -9,12 +9,10 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies in Docker
-RUN npm install
-
-RUN npm run build
+RUN npm ci
 
 # Copy app from local environment into the Docker image
-COPY . .
+COPY ./www .
 
 # Set the API’s port number
 EXPOSE 8080
