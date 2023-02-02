@@ -11,7 +11,7 @@ COPY package*.json ./
 # Install dependencies in Docker
 RUN npm ci
 
-RUN npm install -g typescript
+RUN npm install -g npx
 # Build app to prepare for the copy!
 RUN npm run build
 
