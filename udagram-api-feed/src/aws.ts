@@ -3,7 +3,8 @@ import {config} from './config/config';
 
 
 // Configure AWS
-const credentials = new AWS.SharedIniFileCredentials({profile: config.aws_profile});
+var credentials = new AWS.SharedIniFileCredentials({profile: config.aws_profile});
+
 credentials.accessKeyId = process.env.AWS_ACCESS_KEY_ID;
 credentials.secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
 
