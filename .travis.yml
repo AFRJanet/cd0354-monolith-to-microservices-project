@@ -10,7 +10,7 @@ node_js:
 # safelist
 branches:
   only:
-  - configuration
+  - main
 
 services:
   - docker
