@@ -12,7 +12,7 @@ COPY package*.json ./
 RUN npm ci
 
 # Build app to prepare for the copy!
-RUN npm run build
+#RUN npm run build
 
 # Copy app from local environment into the Docker image
 COPY . .

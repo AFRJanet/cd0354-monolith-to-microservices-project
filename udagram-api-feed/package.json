@@ -7,9 +7,9 @@
     "start": "node .",
     "tsc": "tsc",
     "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
-    "prod": "npx tsc && node ./www/server.js",
+    "prod": "tsc && node ./www/server.js",
     "clean": "rimraf www/ || true",
-    "build": "npm run clean && npx tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
+    "build": "npm run clean && tsc && xcopy \"./src/config\" \"./www/config\" && xcopy \".npmrc\" \"./www/.npmrc\" && xcopy package.json \"./www/package.json\" && cd www && 7z a -tzip Archive.zip \"./\" && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -28,8 +28,7 @@
     "pg": "^8.0.3",
     "reflect-metadata": "^0.1.13",
     "sequelize": "^5.21.4",
-    "sequelize-typescript": "^0.6.9",
-    "typescript": "^3.3.4000"
+    "sequelize-typescript": "^0.6.9"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.26",
@@ -47,7 +46,6 @@
     "mocha": "^6.1.4",
     "ts-node-dev": "^1.0.0-pre.32",
     "typescript": "^3.3.4000",
-    "rimraf": "^3.0.2",
-    "npx": "^10.2.2"
+    "rimraf": "^3.0.2"
   }
 }
