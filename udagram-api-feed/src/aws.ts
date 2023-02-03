@@ -7,7 +7,6 @@ var credentials = new AWS.SharedIniFileCredentials({profile: config.aws_profile}
 
 credentials.accessKeyId = process.env.AWS_ACCESS_KEY_ID;
 credentials.secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
-credentials.sessionToken = process.env.AWS_SESSION_TOKEN;
 
 AWS.config.credentials = credentials;
 
