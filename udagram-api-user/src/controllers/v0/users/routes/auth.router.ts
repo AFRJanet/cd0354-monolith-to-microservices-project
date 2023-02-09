@@ -75,6 +75,8 @@ router.post('/login', async (req: Request, res: Response) => {
     return res.status(401).send({auth: false, message: 'Password was invalid.'});
   }
 
+  console.log(`User with email: ${email} is logged in.`);
+
   const jwt = generateJWT(user);
   res.status(200).send({auth: true, token: jwt, user: user.short()});
 });

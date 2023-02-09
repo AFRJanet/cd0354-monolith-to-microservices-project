@@ -23,3 +23,8 @@ kubectl describe hpa
 ```bash
 kubectl logs {pod_name}
 ```
+
+## Project Submit Comment
+
+backend-user has defined replicas: 2
+horizontal autoscaling was activated for backend-user --cpu=50 --min=1 --max=5 (screenshot kubectl_describe_hpa)
