@@ -15,8 +15,8 @@ spec:
         app: backend-feed
     spec:
       containers:
-      - name: udagram-api-feed
-        image: ameliejanetschek/udagram-api-feed
+      - name: backend-feed
+        image: ameliejanetschek/udagram-api-feed:latest
         ports:
         - containerPort: 8080
         livenessProbe:

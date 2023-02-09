@@ -15,8 +15,8 @@ spec:
         app: backend-user
     spec:
       containers:
-      - name: udagram-api-user
-        image: ameliejanetschek/udagram-api-user
+      - name: backend-user
+        image: ameliejanetschek/udagram-api-user:latest
         ports:
         - containerPort: 8080
         livenessProbe:
