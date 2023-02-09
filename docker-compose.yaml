@@ -1,4 +1,5 @@
 version: "4"
+apiVersion: apps/v1
 services:
   reverseproxy:
       image: udagram-reverse-proxy
@@ -37,6 +38,6 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
   frontend:
-    image: udagram-frontend:local
+    image: udagram-frontend:latest
     ports:
       - "8100:80"
