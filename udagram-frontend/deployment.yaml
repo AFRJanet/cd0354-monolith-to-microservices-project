@@ -15,13 +15,16 @@ spec:
         app: udagram-frontend
     spec:
       containers:
-      - name: udagram-frontend
-        image: ameliejanetschek/udagram-frontend
+      - image: ameliejanetschek/udagram-frontend:latest
+        name: udagram-frontend
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"   
         ports:
-        - containerPort: 8100
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8100
-          initialDelaySeconds: 3
-          periodSeconds: 3
+        - containerPort: 80
+      restartPolicy: Always

@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-user
   labels:
     app: backend-user
+  name: backend-user
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: backend-user
@@ -15,16 +15,16 @@ spec:
         app: backend-user
     spec:
       containers:
-      - name: backend-user
-        image: ameliejanetschek/udagram-api-user:latest
-        ports:
-        - containerPort: 8080
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8080
-          initialDelaySeconds: 3
-          periodSeconds: 3
+      - image: ameliejanetschek/udagram-api-user:latest
+        name: backend-user
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "2048Mi"
+            cpu: "500m"
         env:
         - name: URL
           valueFrom:
