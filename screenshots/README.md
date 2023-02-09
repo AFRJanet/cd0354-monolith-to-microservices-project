@@ -26,5 +26,15 @@ kubectl logs {pod_name}
 
 ## Project Submit Comment
 
-backend-user has defined replicas: 2
-horizontal autoscaling was activated for backend-user --cpu=50 --min=1 --max=5 (screenshot kubectl_describe_hpa)
+frontend url is set to:
+aec6871309d644e26bc531cecc786b35-164678345.us-east-1.elb.amazonaws.com
+
+reverse-proxy url is:
+ab098ad23a0e24cc599fa064e17deab3-647984639.us-east-1.elb.amazonaws.com
+
+backend-user has defined replicas: 2 (screenshot api-user-replicas-2.png)
+horizontal autoscaling was activated for backend-user --cpu=50 --min=1 --max=5 (screenshot kubectl_describe_hpa and kubectl_horizontal_autoscaling_hpa.png)
+
+.travis.yml has the configuration, that only when the main branch is changing,
+that the build on Travis CI is triggered.
+
