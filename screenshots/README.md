@@ -35,6 +35,8 @@ ab098ad23a0e24cc599fa064e17deab3-647984639.us-east-1.elb.amazonaws.com
 backend-user has defined replicas: 2 (screenshot api-user-replicas-2.png)
 horizontal autoscaling was activated for backend-user --cpu=50 --min=1 --max=5 (screenshot kubectl_describe_hpa and kubectl_horizontal_autoscaling_hpa.png)
 
+kubectl logs backend-user. Screenshot kubect_logs_user.png show successfully user fakeemail@email.com login.
+
 .travis.yml has the configuration, that only when the main branch is changing,
 that the build on Travis CI is triggered.
 
