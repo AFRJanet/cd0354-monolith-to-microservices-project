@@ -43,3 +43,7 @@ venv/
 /.node_env_variables.bat
 /udagram-api/.node_env_variables.bat
 /docker-compose_dump.dump
+/pull_all_docker_images.bat
+/env-secret.yaml
+/aws-secret.yaml
+/env-configmap.yaml
