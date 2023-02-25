@@ -1,5 +1,5 @@
 # Use NodeJS base image
-FROM node:14
+FROM node:12
 
 # Create app directory in Docker
 WORKDIR /usr/src/app
